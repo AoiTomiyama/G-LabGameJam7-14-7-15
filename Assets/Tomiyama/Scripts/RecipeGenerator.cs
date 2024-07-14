@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +10,12 @@ public class RecipeGenerator : MonoBehaviour
     [Header("RecipeImage‚ÌPrefab‚ğ“ü‚ê‚é")]
     [SerializeField]
     GameObject _recipeImage;
+    [Header("¸”s‚µ‚½‚Æ‚«‚ÉŒ¸‚ç‚·•b”")]
+    [SerializeField]
+    float _removeSecond;
+    [Header("¬Œ÷‚µ‚½‚Æ‚«‚É‘‚â‚·d—Ê")]
+    [SerializeField]
+    float _addScore;
     List<Sprite> _ingredients = new List<Sprite>();
     List<GameObject> _recipe = new List<GameObject>();
     private void Start()
@@ -21,13 +25,6 @@ public class RecipeGenerator : MonoBehaviour
             _ingredients.Add(item.GetComponent<SpriteRenderer>().sprite);
         }
         RegenerateRecipe();
-    }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            RegenerateRecipe();
-        }
     }
     void RegenerateRecipe()
     {
@@ -84,6 +81,7 @@ public class RecipeGenerator : MonoBehaviour
         if (!isContains)
         {
             Debug.Log("Reduce Time");
+            FindObjectOfType<Timer>().GetComponent<Timer>().RemoveTime(_removeSecond);
             RegenerateRecipe();
         }
         isContains = false;
@@ -91,6 +89,7 @@ public class RecipeGenerator : MonoBehaviour
         if (_recipe.Count == 0)
         {
             Debug.Log("Score gain");
+            FindObjectOfType<Score>().GetComponent<Score>().AddScore(_addScore);
             RegenerateRecipe();
         }
     }
