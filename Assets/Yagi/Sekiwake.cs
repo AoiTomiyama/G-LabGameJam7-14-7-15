@@ -13,6 +13,8 @@ public class Sekiwake : MonoBehaviour
     [SerializeField] int _state4;
     [SerializeField] int _state5;
     [SerializeField] int _state6;
+    public int _class;
+    string _name;
 
     private void Start()
     {
@@ -24,27 +26,38 @@ public class Sekiwake : MonoBehaviour
         
         if (score._score > _state1)
         {
-            text.text = "è\óº";
+            _name = "è\óº";
+            text.text = _name;
+            _class = 1;
         }
         if (score._score > _state2)
         {
-            text.text = "ëOì™";
+            _name = "ëOì™";
+            text.text = _name;
         }
         if (score._score > _state3)
         {
-            text.text = "è¨åã";
+            _name = "è¨åã";
+            text.text = _name;
         }
         if (score._score > _state4)
         {
-            text.text = "ä÷òe";
+            _name = "ä÷òe";
+            text.text = _name;
+            _class = 2;
         }
         if (score._score > _state5)
         {
-            text.text = "ëÂä÷";
+            _name = "ëÂä÷";
+            text.text = _name;
         }
         if (score._score > _state6)
         {
-            text.text = "â°çj";
+            _name = "â°çj";
+            text.text = _name;
+            _class = 3;
         }
+        PlayerPrefs.SetString("ä÷òe", _name);
+        PlayerPrefs.Save();
     }
 }

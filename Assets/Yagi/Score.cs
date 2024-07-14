@@ -7,6 +7,7 @@ public class Score : MonoBehaviour
 {
     [SerializeField] Text _text;
     public float _score = 70;
+    
 
     private void Update()
     {
@@ -14,7 +15,9 @@ public class Score : MonoBehaviour
         {
             _score += 10;
         }
-        _text.text = _score + "ÉLÉç";
+        _text.text = $"{_score} ÉLÉç";
+        PlayerPrefs.SetFloat("score", _score);
+        PlayerPrefs.Save();
     }
 
 }
