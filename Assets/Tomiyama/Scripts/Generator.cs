@@ -7,6 +7,7 @@ public class Generator : MonoBehaviour
     [Header("降らす食材のリスト")]
     [SerializeField]
     private GameObject[] _ingredientsArray;
+    public GameObject[] IngredientsArray { get => _ingredientsArray; }
 
     [Header("降ってくるインターバルの時間")]
     [SerializeField]
