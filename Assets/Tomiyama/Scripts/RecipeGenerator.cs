@@ -26,16 +26,18 @@ public class RecipeGenerator : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            foreach (var go in _recipe)
-            {
-                Destroy(go, Time.deltaTime);
-            }
             RegenerateRecipe();
         }
     }
     void RegenerateRecipe()
     {
-
+        if (_recipe.Count > 0)
+        {
+            foreach (var go in _recipe)
+            {
+                Destroy(go);
+            }
+        }
         _recipe.Clear();
         if (_enableDuplicate)
         {
@@ -64,12 +66,6 @@ public class RecipeGenerator : MonoBehaviour
             }
             _recipe = currentRecipe;
         }
-        var line = "";
-        foreach (var s in _recipe)
-        {
-            line += s.name + ", ";
-        }
-        Debug.Log(line);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -88,6 +84,7 @@ public class RecipeGenerator : MonoBehaviour
         if (!isContains)
         {
             Debug.Log("Reduce Time");
+            RegenerateRecipe();
         }
         isContains = false;
         Destroy(collision.gameObject);
