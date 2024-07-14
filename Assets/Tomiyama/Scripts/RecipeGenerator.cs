@@ -16,6 +16,9 @@ public class RecipeGenerator : MonoBehaviour
     [Header("成功したときに増やす重量")]
     [SerializeField]
     float _addScore;
+    [Header("成功時のエフェクト")]
+    [SerializeField]
+    GameObject _successEffect;
     List<Sprite> _ingredients = new List<Sprite>();
     List<GameObject> _recipe = new List<GameObject>();
     private void Start()
@@ -66,31 +69,35 @@ public class RecipeGenerator : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        var spr = collision.gameObject.GetComponent<SpriteRenderer>().sprite;
-        bool isContains = false;
-        foreach (var go in _recipe)
+        if (LayerMask.LayerToName(collision.gameObject.layer) == "Vegetable")
         {
-            if (go.GetComponent<Image>().sprite == spr)
+            var spr = collision.gameObject.GetComponent<SpriteRenderer>().sprite;
+            bool isContains = false;
+            foreach (var go in _recipe)
             {
-                _recipe.Remove(go);
-                Destroy(go);
-                isContains = true;
-                break;
+                if (go.GetComponent<Image>().sprite == spr)
+                {
+                    _recipe.Remove(go);
+                    Destroy(go);
+                    isContains = true;
+                    break;
+                }
             }
-        }
-        if (!isContains)
-        {
-            Debug.Log("Reduce Time");
-            FindObjectOfType<Timer>().GetComponent<Timer>().RemoveTime(_removeSecond);
-            RegenerateRecipe();
-        }
-        isContains = false;
-        Destroy(collision.gameObject);
-        if (_recipe.Count == 0)
-        {
-            Debug.Log("Score gain");
-            FindObjectOfType<Score>().GetComponent<Score>().AddScore(_addScore);
-            RegenerateRecipe();
+            if (!isContains)
+            {
+                Debug.Log("Reduce Time");
+                FindObjectOfType<Timer>().GetComponent<Timer>().RemoveTime(_removeSecond);
+                RegenerateRecipe();
+            }
+            isContains = false;
+            Destroy(collision.gameObject);
+            if (_recipe.Count == 0)
+            {
+                Debug.Log("Score gain");
+                Instantiate(_successEffect, transform.position, Quaternion.identity, transform);
+                FindObjectOfType<Score>().GetComponent<Score>().AddScore(_addScore); 
+                RegenerateRecipe();
+            }
         }
     }
 }
