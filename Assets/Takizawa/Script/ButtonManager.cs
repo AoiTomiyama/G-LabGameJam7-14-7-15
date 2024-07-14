@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
+    [SerializeField] private GameObject _ruleUI;
+    [SerializeField] private GameObject _returnUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,5 +26,14 @@ public class ButtonManager : MonoBehaviour
     {
         SceneManager.LoadScene("TitleScene");
     }
-
+    public void OnClickRuleActive()
+    {
+        _ruleUI.SetActive(true);
+        _returnUI.SetActive(true);
+    }
+    public void OnClickReturn()
+    {
+        _ruleUI.SetActive(false);
+        _returnUI.SetActive(false);
+    }
 }
