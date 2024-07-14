@@ -16,6 +16,6 @@ public class Timer : MonoBehaviour
     void Update()
     {
         _time -= Time.deltaTime;
-        _text.text = "Žc‚è" + _time.ToString("F0") + "•b";
+        _text.text = _time.ToString("F0") + "•b";
     }
 }
