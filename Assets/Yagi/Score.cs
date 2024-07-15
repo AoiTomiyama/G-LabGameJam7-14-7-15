@@ -11,7 +11,7 @@ public class Score : MonoBehaviour
     public float GetScore { get => _score; }
     private void Start()
     {
-        _text.text = $"{_score} ÉLÉç";
+        _text.text = $"{_score}kg";
     }
 
     private void Update()
@@ -25,7 +25,7 @@ public class Score : MonoBehaviour
     public void AddScore(float score)
     {
         _score += score;
-        _text.text = $"{_score} ÉLÉç";
+        _text.text = $"{_score}kg";
     }
 
     private void OnDisable()
