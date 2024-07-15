@@ -13,30 +13,35 @@ public class ButtonManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       // this.GetComponent<Button>().onClick.AddListener(push);
+        
        
     }
 
     public void push()
     {
+        AudioManager.Instance.RunSE(AudioManager.SE.Click);
         SceneManager.LoadScene("GameScene");
     }
     public void OnRoadRankingScene()
     {
+        AudioManager.Instance.RunSE(AudioManager.SE.Click);
         SceneManager.LoadScene("RankingScene");
     }
     public void OnRoadTitleScene()
     {
+        AudioManager.Instance.RunSE(AudioManager.SE.Click); 
         SceneManager.LoadScene("TitleScene");
     }
     public void OnClickRuleActive()
     {
+        AudioManager.Instance.RunSE(AudioManager.SE.Click);
         _ruleUI.SetActive(true);
         _returnUI.SetActive(true);
         _actionUI.SetActive(false);
     }
     public void OnClickReturn()
     {
+        AudioManager.Instance.RunSE(AudioManager.SE.Click); 
         _ruleUI.SetActive(false);
         _returnUI.SetActive(false);
         _actionUI.SetActive(true);
