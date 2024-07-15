@@ -8,6 +8,7 @@ public class ButtonManager : MonoBehaviour
 {
     [SerializeField] private GameObject _ruleUI;
     [SerializeField] private GameObject _returnUI;
+    [SerializeField]private GameObject _actionUI;
     AudioSource _audiosourse;
     // Start is called before the first frame update
     void Start()
@@ -32,11 +33,13 @@ public class ButtonManager : MonoBehaviour
     {
         _ruleUI.SetActive(true);
         _returnUI.SetActive(true);
+        _actionUI.SetActive(false);
     }
     public void OnClickReturn()
     {
         _ruleUI.SetActive(false);
         _returnUI.SetActive(false);
+        _actionUI.SetActive(true);
     }
    
 
