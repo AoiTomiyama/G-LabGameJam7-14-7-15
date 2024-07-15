@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
     [SerializeField] Text _text;
+    [Header("開始時のスコア")]
+    [SerializeField]
     private float _score = 70;
     public float GetScore { get => _score; }
     private void Start()

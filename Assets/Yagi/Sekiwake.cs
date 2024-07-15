@@ -24,34 +24,34 @@ public class Sekiwake : MonoBehaviour
     void Update()
     {
         
-        if (score.GetScore > _state1)
+        if (score.GetScore >= _state1)
         {
             _name = "è\óº";
             text.text = _name;
             _class = 1;
         }
-        if (score.GetScore > _state2)
+        if (score.GetScore >= _state2)
         {
             _name = "ëOì™";
             text.text = _name;
         }
-        if (score.GetScore > _state3)
+        if (score.GetScore >= _state3)
         {
             _name = "è¨åã";
             text.text = _name;
+            _class = 2;
         }
-        if (score.GetScore > _state4)
+        if (score.GetScore >= _state4)
         {
             _name = "ä÷òe";
             text.text = _name;
-            _class = 2;
         }
-        if (score.GetScore > _state5)
+        if (score.GetScore >= _state5)
         {
             _name = "ëÂä÷";
             text.text = _name;
         }
-        if (score.GetScore > _state6)
+        if (score.GetScore >= _state6)
         {
             _name = "â°çj";
             text.text = _name;
