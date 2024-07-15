@@ -29,18 +29,17 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
    private void Start()
     {
+        _seDic = new Dictionary<SE, AudioClip>();
         _audioSource = GetComponent<AudioSource>();
 
         _seDic.Add(SE.Footstep, _sounds[0]);
-        _seDic.Add(SE.FallVegetable, _sounds[1]);
-        _seDic.Add(SE.Completion, _sounds[2]);
-        _seDic.Add(SE.Misstake, _sounds[3]);
-        _seDic.Add(SE.Change, _sounds[4]);
-        _seDic.Add(SE.GameOver, _sounds[5]);
-        _seDic.Add(SE.GameClear, _sounds[6]);
-        _seDic.Add(SE.Timer, _sounds[7]);
-        _seDic.Add(SE.LevelUp, _sounds[8]);
-        _seDic.Add(SE.Click, _sounds[9]);
+        _seDic.Add(SE.Completion, _sounds[1]);
+        _seDic.Add(SE.Misstake, _sounds[2]);
+        _seDic.Add(SE.Change, _sounds[3]);
+        _seDic.Add(SE.GameClear, _sounds[4]);
+        _seDic.Add(SE.Timer, _sounds[5]);
+        _seDic.Add(SE.LevelUp, _sounds[6]);
+        _seDic.Add(SE.Click, _sounds[7]);
 
     }
 
@@ -54,11 +53,9 @@ public class AudioManager : MonoBehaviour
     {
         None ,
         Footstep,
-        FallVegetable,
         Completion,
         Misstake,
         Change,
-        GameOver,
         GameClear,
         Timer,
         LevelUp,
