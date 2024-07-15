@@ -27,4 +27,10 @@ public class Score : MonoBehaviour
         _score += score;
         _text.text = $"{_score} ÉLÉç";
     }
+
+    private void OnDisable()
+    {
+        PlayerPrefs.SetFloat("score", _score);
+        PlayerPrefs.Save();
+    }
 }
