@@ -31,6 +31,7 @@ public class RecipeGenerator : MonoBehaviour
     }
     void RegenerateRecipe()
     {
+        AudioManager.Instance.RunSE(AudioManager.SE.Change);
         if (_recipe.Count > 0)
         {
             foreach (var go in _recipe)
@@ -88,6 +89,7 @@ public class RecipeGenerator : MonoBehaviour
                 Debug.Log("Reduce Time");
                 FindObjectOfType<Timer>().GetComponent<Timer>().RemoveTime(_removeSecond);
                 RegenerateRecipe();
+                AudioManager.Instance.RunSE(AudioManager.SE.Misstake);
             }
             isContains = false;
             Destroy(collision.gameObject);
@@ -96,6 +98,7 @@ public class RecipeGenerator : MonoBehaviour
                 Debug.Log("Score gain");
                 Instantiate(_successEffect, transform.position, Quaternion.identity, transform);
                 FindObjectOfType<Score>().GetComponent<Score>().AddScore(_addScore); 
+                AudioManager.Instance.RunSE(AudioManager.SE.Completion);
                 RegenerateRecipe();
             }
         }
