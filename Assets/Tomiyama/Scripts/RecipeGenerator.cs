@@ -19,6 +19,9 @@ public class RecipeGenerator : MonoBehaviour
     [Header("成功時のエフェクト")]
     [SerializeField]
     GameObject _successEffect;
+    [Header("失敗時のエフェクト")]
+    [SerializeField]
+    GameObject _mistakeEffect;
     List<Sprite> _ingredients = new List<Sprite>();
     List<GameObject> _recipe = new List<GameObject>();
     private void Start()
@@ -87,9 +90,10 @@ public class RecipeGenerator : MonoBehaviour
             if (!isContains)
             {
                 Debug.Log("Reduce Time");
+                Instantiate(_mistakeEffect, transform.position, Quaternion.identity, transform);
                 FindObjectOfType<Timer>().GetComponent<Timer>().RemoveTime(_removeSecond);
-                RegenerateRecipe();
                 AudioManager.Instance.RunSE(AudioManager.SE.Misstake);
+                RegenerateRecipe();
             }
             isContains = false;
             Destroy(collision.gameObject);
