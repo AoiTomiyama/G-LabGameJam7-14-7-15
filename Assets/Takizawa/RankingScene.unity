@@ -215,6 +215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ruleUI: {fileID: 0}
   _returnUI: {fileID: 0}
+  _actionUI: {fileID: 0}
 --- !u!114 &45251284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -467,7 +468,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\u9806\u4F4D"
+  m_Text: "\u756A\u4ED8"
 --- !u!222 &268755490
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1583,6 +1584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ruleUI: {fileID: 0}
   _returnUI: {fileID: 0}
+  _actionUI: {fileID: 0}
 --- !u!114 &1747445156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1753,7 +1755,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u30BF\u30A4\u30C8\u30EB\u623B\u308B"
+  m_Text: "\u30BF\u30A4\u30C8\u30EB\u306B\u623B\u308B"
 --- !u!222 &2073035107
 CanvasRenderer:
   m_ObjectHideFlags: 0
