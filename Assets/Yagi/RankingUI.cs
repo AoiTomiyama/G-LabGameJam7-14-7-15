@@ -31,7 +31,7 @@ public class RankingUI : MonoBehaviour
             if (i < rankingEntries.Count)
             {
                 RankingEntry entry = rankingEntries[i];
-                entryObject.transform.Find("ScoreRanking").GetComponent<Text>().text = entry.scorerank.ToString();
+                entryObject.transform.Find("ScoreRanking").GetComponent<Text>().text = $"{entry.scorerank.ToString()}ÉLÉç";
             }
             else
             {

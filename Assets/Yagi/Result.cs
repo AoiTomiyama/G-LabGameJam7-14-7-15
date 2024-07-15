@@ -8,6 +8,8 @@ public class Result : MonoBehaviour
     [SerializeField] RankingManager rankingManager;
     [SerializeField] Text _scoretext;
     [SerializeField] Text _banduke;
+
+    
     void Start()
     {
         _scoretext.text = $"ëÃèd{PlayerPrefs.GetFloat("score")}ÉLÉç";
