@@ -796,12 +796,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 264071330}
-  _state1: 0
-  _state2: 0
-  _state3: 0
-  _state4: 0
-  _state5: 0
-  _state6: 0
+  _state1: 30
+  _state2: 50
+  _state3: 70
+  _state4: 110
+  _state5: 150
+  _state6: 230
   _class: 0
 --- !u!114 &551530851
 MonoBehaviour:
@@ -816,6 +816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 1092126853}
+  _score: 30
 --- !u!114 &551530852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1966,7 +1967,7 @@ MonoBehaviour:
   _enableDuplicate: 0
   _recipeImage: {fileID: 2005055649257882196, guid: 36256cc13d2a6d04f83a9c0f86621ab7, type: 3}
   _removeSecond: 5
-  _addScore: 5
+  _addScore: 20
   _successEffect: {fileID: 342608360036219994, guid: 6810af90a5dc6c84590af594394f1383, type: 3}
 --- !u!4 &1690975682 stripped
 Transform:
