@@ -16,9 +16,6 @@ public class PlayerTestMove : MonoBehaviour
     private void Update()
     {
         _h = Input.GetAxisRaw("Horizontal");
-        if (_h != 0)
-        {
-            _rb.velocity = Vector2.right * _h * _speed;
-        }
+        _rb.velocity = Vector2.right * _h * _speed;
     }
 }
