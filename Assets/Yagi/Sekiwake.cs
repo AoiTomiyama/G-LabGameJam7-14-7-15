@@ -60,6 +60,7 @@ public class Sekiwake : MonoBehaviour
     }
     private void OnDisable()
     {
+        PlayerPrefs.SetInt("class",_class);
         PlayerPrefs.SetString("ŠÖ˜e", _name);
         PlayerPrefs.Save();
     }
