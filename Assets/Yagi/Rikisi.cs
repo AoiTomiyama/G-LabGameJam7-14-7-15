@@ -16,17 +16,19 @@ public class Rikisi : MonoBehaviour
     }
     void Update()
     {
-        if (sekiwake._class == 1)
+        if (sekiwake._class == 1 && spriteRenderer.sprite != sprite1)
         {
             spriteRenderer.sprite = sprite1;
         }
-        else if (sekiwake._class == 2)
+        else if (sekiwake._class == 2 && spriteRenderer.sprite != sprite2)
         {
             spriteRenderer.sprite = sprite2;
+            AudioManager.Instance.RunSE(AudioManager.SE.LevelUp);
         }
-        else if (sekiwake._class == 3)
+        else if (sekiwake._class == 3 && spriteRenderer.sprite != sprite3)
         {
             spriteRenderer.sprite = sprite3;
+            AudioManager.Instance.RunSE(AudioManager.SE.LevelUp);
         }
     }
 }

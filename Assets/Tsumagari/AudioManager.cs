@@ -49,6 +49,11 @@ public class AudioManager : MonoBehaviour
     {
         _audioSource.PlayOneShot(_seDic[se]);
     }
+
+    public void StopSE()
+    {
+        _audioSource.Stop();
+    }
     public enum SE
     {
         None ,
