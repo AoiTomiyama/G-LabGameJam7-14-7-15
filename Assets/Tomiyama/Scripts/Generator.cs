@@ -45,5 +45,6 @@ public class Generator : MonoBehaviour
         var scr = Instantiate(_ingredientsArray[Random.Range(0, _ingredientsArray.Length)], new Vector2(randomX, this.transform.position.y), Quaternion.identity).GetComponent<IngredientsFall>();
         scr.Speed = _fallSpeed;
         _currentInterval = Random.Range(_intervalTimeMin, _intervalTimeMax);
+        _fallSpeed += 0.03f;
     }
 }

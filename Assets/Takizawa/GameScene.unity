@@ -558,7 +558,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.46, y: 0.8}
+  m_Size: {x: 3.01, y: 0.8}
   m_EdgeRadius: 0
 --- !u!212 &279208973
 SpriteRenderer:
@@ -1924,7 +1924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2686526696993662748, guid: 45df1c585018ebc4298ff69ce8108c0f, type: 3}
       propertyPath: _fallSpeed
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2686526696993662748, guid: 45df1c585018ebc4298ff69ce8108c0f, type: 3}
       propertyPath: _intervalTime
@@ -2108,7 +2108,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ab8234425ae3909458357a2a0bb8626f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 1
   Mute: 0
