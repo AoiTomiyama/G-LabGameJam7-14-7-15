@@ -17,11 +17,11 @@ public class MoveCharactorController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A))
         {
-            position.x -= speed;
+            position.x -= speed * Time.deltaTime;
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            position.x += speed;
+            position.x += speed * Time.deltaTime;
         }
         transform.position = position;
 
