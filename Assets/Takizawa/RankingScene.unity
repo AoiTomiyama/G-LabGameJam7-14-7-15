@@ -216,6 +216,10 @@ MonoBehaviour:
   _ruleUI: {fileID: 0}
   _returnUI: {fileID: 0}
   _actionUI: {fileID: 0}
+  _startUI: {fileID: 0}
+  _credit: {fileID: 0}
+  _creditClose: {fileID: 0}
+  _creditButton: {fileID: 0}
 --- !u!114 &45251284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1338,7 +1342,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1714,6 +1718,10 @@ MonoBehaviour:
   _ruleUI: {fileID: 0}
   _returnUI: {fileID: 0}
   _actionUI: {fileID: 0}
+  _startUI: {fileID: 0}
+  _credit: {fileID: 0}
+  _creditClose: {fileID: 0}
+  _creditButton: {fileID: 0}
 --- !u!114 &1747445156
 MonoBehaviour:
   m_ObjectHideFlags: 0

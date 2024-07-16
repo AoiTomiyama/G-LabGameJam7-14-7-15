@@ -1523,6 +1523,10 @@ MonoBehaviour:
   _ruleUI: {fileID: 0}
   _returnUI: {fileID: 0}
   _actionUI: {fileID: 0}
+  _startUI: {fileID: 0}
+  _credit: {fileID: 0}
+  _creditClose: {fileID: 0}
+  _creditButton: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

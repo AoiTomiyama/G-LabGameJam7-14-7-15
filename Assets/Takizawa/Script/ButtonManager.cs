@@ -1,22 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
     [SerializeField] private GameObject _ruleUI;
     [SerializeField] private GameObject _returnUI;
-    [SerializeField]private GameObject _actionUI;
+    [SerializeField] private GameObject _actionUI;
     [SerializeField] private GameObject _startUI;
-    AudioSource _audiosourse;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-       
-    }
+    [SerializeField] private GameObject _credit;
+    [SerializeField] private GameObject _creditClose;
+    [SerializeField] private GameObject _creditButton;
 
     public void push()
     {
@@ -30,7 +23,7 @@ public class ButtonManager : MonoBehaviour
     }
     public void OnRoadTitleScene()
     {
-        AudioManager.Instance.RunSE(AudioManager.SE.Click); 
+        AudioManager.Instance.RunSE(AudioManager.SE.Click);
         SceneManager.LoadScene("TitleScene");
     }
     public void OnClickRuleActive()
@@ -40,15 +33,33 @@ public class ButtonManager : MonoBehaviour
         _returnUI.SetActive(true);
         _actionUI.SetActive(false);
         _startUI.SetActive(false);
+        _creditButton.SetActive(false);
     }
     public void OnClickReturn()
     {
-        AudioManager.Instance.RunSE(AudioManager.SE.Click); 
+        AudioManager.Instance.RunSE(AudioManager.SE.Click);
         _ruleUI.SetActive(false);
         _returnUI.SetActive(false);
         _actionUI.SetActive(true);
         _startUI.SetActive(true);
+        _creditButton.SetActive(true);
     }
-   
-
+    public void ShowCredit()
+    {
+        AudioManager.Instance.RunSE(AudioManager.SE.Click);
+        _credit.SetActive(true);
+        _creditClose.SetActive(true);
+        _actionUI.SetActive(false);
+        _startUI.SetActive(false);
+        _creditButton.SetActive(false);
+    }
+    public void HideCredit()
+    {
+        AudioManager.Instance.RunSE(AudioManager.SE.Click);
+        _credit.SetActive(false);
+        _creditClose.SetActive(false);
+        _actionUI.SetActive(true);
+        _startUI.SetActive(true);
+        _creditButton.SetActive(true);
+    }
 }
